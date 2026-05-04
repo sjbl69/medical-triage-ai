@@ -1,0 +1,56 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "med_qu_ad",
+  "dataset_size": 34989308,
+  "description": "",
+  "download_size": 10718159,
+  "features": {
+    "instruction": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "response": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "triage_level": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "symptoms": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "language": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "confidence_score": {
+      "dtype": "float64",
+      "_type": "Value"
+    },
+    "source": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 45707467,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 34989308,
+      "num_examples": 47441,
+      "dataset_name": "med_qu_ad"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "prompt": "Patient: J'ai une douleur à la poitrine\nDoctor:",
+    "chosen": "Appelez immédiatement les secours.",
+    "rejected": "Ce n'est probablement rien."
+  },
+  {
+    "prompt": "Patient: Je saigne beaucoup\nDoctor:",
+    "chosen": "Appliquez une pression et appelez les urgences.",
+    "rejected": "Attendez que ça passe."
+  }
+]

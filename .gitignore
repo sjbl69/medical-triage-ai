@@ -1,15 +1,4 @@
-# Python
+models/
 __pycache__/
 *.pyc
-
-# Environnements
-.venv/
-
-# Données lourdes
-data/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# OS
-.DS_Store
+.env
