@@ -1,11 +1,4 @@
+models/
+wandb/
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-.env
-.venv
-.git
-.gitignore
-notebooks/
-data/
-logs/
+.venv/
