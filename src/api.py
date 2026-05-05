@@ -22,33 +22,30 @@ app = FastAPI(
 device = 0 if torch.cuda.is_available() else -1
 
 # =========================
-# CI MODE
+# MODEL PATH
 # =========================
-CI_MODE = os.getenv("CI") == "true"
+MODEL_PATH = "/app/models/final_model"
 
 # =========================
-# DEBUG MODEL FILES
+# SAFE MODEL LOADING
 # =========================
-if not CI_MODE:
-    print("FILES IN MODEL:", os.listdir("/app/models/final_model"))
+if os.path.exists(MODEL_PATH):
 
-    with open("/app/models/final_model/config.json") as f:
+    print("FILES IN MODEL:", os.listdir(MODEL_PATH))
+
+    with open(f"{MODEL_PATH}/config.json") as f:
         print("CONFIG LOADED:", json.load(f))
-else:
-    print("CI MODE ENABLED - MODEL DISABLED")
 
-# =========================
-# LOAD MODEL
-# =========================
-if CI_MODE:
-    pipe = None
-else:
     pipe = pipeline(
         "text-generation",
-        model="/app/models/final_model",
-        tokenizer="/app/models/final_model",
+        model=MODEL_PATH,
+        tokenizer=MODEL_PATH,
         device=device
     )
+
+else:
+    print("MODEL NOT FOUND - SAFE MODE ENABLED")
+    pipe = None
 
 # =========================
 # REQUEST SCHEMA
@@ -60,6 +57,7 @@ class Request(BaseModel):
 # CLEAN MODEL OUTPUT
 # =========================
 def clean_response(text: str) -> str:
+
     if "Doctor:" in text:
         text = text.split("Doctor:")[-1]
 
@@ -71,6 +69,7 @@ def clean_response(text: str) -> str:
 # RULE-BASED SAFETY
 # =========================
 def rule_based_triage(symptom: str):
+
     s = symptom.lower()
 
     # 🚨 URGENCES VITALES
@@ -120,6 +119,7 @@ def rule_based_triage(symptom: str):
 # =========================
 @app.post("/generate")
 def generate(req: Request):
+
     start = time.time()
 
     triage_rule, message_rule = rule_based_triage(req.symptom)
@@ -127,11 +127,14 @@ def generate(req: Request):
     prompt = f"Patient: J'ai {req.symptom}\nDoctor:"
 
     # =========================
-    # SAFE CI / RAILWAY MODE
+    # SAFE MODE
     # =========================
     if pipe is None:
+
         model_response = ""
+
     else:
+
         result = pipe(
             prompt,
             max_new_tokens=40,
@@ -140,10 +143,15 @@ def generate(req: Request):
 
         model_response = clean_response(result)
 
-    # priorité sécurité
+    # =========================
+    # PRIORITÉ SÉCURITÉ
+    # =========================
     if triage_rule in ["URGENCE", "ATTENTION"]:
+
         final_message = message_rule
+
     else:
+
         if (
             len(model_response) < 10
             or "patient" in model_response.lower()
@@ -156,7 +164,7 @@ def generate(req: Request):
     latency = time.time() - start
 
     # =========================
-    # LOGS / TRACEABILITY
+    # TRACEABILITY LOGS
     # =========================
     print(f"[LOG] Symptom: {req.symptom}")
     print(f"[LOG] Triage: {triage_rule}")
@@ -175,15 +183,19 @@ def generate(req: Request):
 # =========================
 @app.get("/")
 def root():
-    return {"status": "API running"}
+
+    return {
+        "status": "API running"
+    }
 
 # =========================
-# TEST
+# TEST ENDPOINT
 # =========================
 @app.get("/test")
 def test():
+
     return {
         "example": {
-            "symptom": "douleur à la poitrine"
+            "symptom": "douleur thoracique"
         }
     }
