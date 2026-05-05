@@ -147,9 +147,4 @@ Includes:
 Selma — AI Engineer
 Project: Medical Triage AI
 
----
 
-## ⚠️ Disclaimer
-
-This project is for **educational purposes only**.
-It must **not be used for real medical diagnosis or treatment**.
