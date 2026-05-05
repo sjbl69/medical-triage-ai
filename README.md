@@ -1,150 +1,230 @@
-#  Medical Triage AI — SFT + DPO (LoRA)
+## API Deployment
 
-##  Project Overview
+The medical triage system was exposed through a FastAPI REST API.
 
-This project implements a **medical triage assistant** based on a language model fine-tuned using:
+Main endpoints:
 
-* **Supervised Fine-Tuning (SFT)** with LoRA
-* **Preference Alignment (DPO)**
-* Clinical evaluation and safety testing
+- `GET /`
+- `GET /test`
+- `POST /generate`
 
-The goal is to build a **safe and efficient triage system** capable of distinguishing between urgent and non-urgent medical situations.
+The API receives a symptom description and returns:
+- a triage classification,
+- a generated medical response,
+- response latency.
 
----
+Example:
 
-##  Tech Stack
-
-* Python
-* PyTorch
-* Hugging Face Transformers
-* TRL (SFTTrainer, DPOTrainer)
-* PEFT (LoRA)
-* Datasets
-
----
-
-##  Model
-
-* Base model: `distilgpt2` *(lightweight for prototyping)*
-* Training methods:
-
-  * SFT (LoRA)
-  * DPO (Direct Preference Optimization)
-
----
-
-##  Project Structure
-
+```json
+{
+  "symptom": "chest pain"
+}
 ```
-├── data/
-│   ├── sft_dataset.json
-│   ├── dpo_dataset.json
-│
-├── models/
-│   ├── sft/
-│   ├── dpo/
-│
-├── metadata/
-│   ├── data_sources.md
-│   ├── schema.json
-│
-├── scripts/
-│   ├── data_cleaning.py
-│   ├── anonymization.py
-│   ├── dataset_builder.py
-│
-├── logs/
-│   └── experiment.json
-│
-└── notebook.ipynb
+
+Response:
+
+```json
+{
+  "triage": "URGENCE",
+  "message": "⚠️ Call emergency services immediately.",
+  "latency": 0.142
+}
 ```
 
 ---
 
-##  Dataset
+## Docker Deployment
 
-### SFT Dataset
+The application was containerized using Docker to ensure:
+- reproducibility,
+- portability,
+- isolated environments.
 
-* ~400 synthetic examples
-* Format:
+Dockerfile:
 
-```
-Patient: <symptom>
-Doctor: <response>
-```
+```dockerfile
+FROM python:3.10-slim
 
-### DPO Dataset
+WORKDIR /app
 
-* Preference pairs:
+COPY . .
 
-  * `chosen` → correct response
-  * `rejected` → incorrect / unsafe response
+RUN pip install --no-cache-dir -r requirements.txt
 
----
+EXPOSE 8080
 
-##  Training Pipeline
-
-### 1. Supervised Fine-Tuning (SFT)
-
-* LoRA applied on attention layers
-* Reduces GPU memory usage
-* Improves base model behavior
-
-### 2. Preference Alignment (DPO)
-
-* Trains model to prefer safe and correct outputs
-* Uses human-like preference pairs
-
----
-
-##  Evaluation
-
-### Clinical Evaluation
-
-| Test Case      | Expected    | Result |
-| -------------- | ----------- | ------ |
-| Chest pain     | URGENCE     | ✅      |
-| Heavy bleeding | URGENCE     | ✅      |
-| Headache       | NON URGENCE | ✅      |
-| Diarrhea       | NON URGENCE | ✅      |
-
- Score automatically computed in pipeline
-
----
-
-##  Experiment Tracking
-
-Saved in:
-
-```
-logs/experiment.json
+CMD ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8080"]
 ```
 
-Includes:
+---
 
-* Model configuration
-* Training parameters
-* Dataset size
-* Evaluation score
+## CI/CD Pipeline
+
+A CI/CD pipeline was implemented using GitHub Actions.
+
+Automated steps:
+- repository checkout,
+- dependency installation,
+- Docker image build,
+- API startup test,
+- deployment preparation.
+
+This ensures reproducible deployments and automated validation.
 
 ---
 
-##  Reproducibility
+## Cloud Deployment
 
-* Deterministic dataset generation
-* Logged hyperparameters
-* Saved checkpoints:
+The API was deployed on Railway as a pilot cloud environment.
 
-  * `models/sft/`
-  * `models/dpo/`
+Observed deployment logs:
 
+```text
+Application startup complete.
+Uvicorn running on http://0.0.0.0:8080
+```
+
+Public endpoint:
+
+```text
+https://medical-triage-ai-production.up.railway.app
+```
+
+Swagger documentation:
+
+```text
+https://medical-triage-ai-production.up.railway.app/docs
+```
 
 ---
 
+## Safety System
 
-##  Author
+A rule-based safety layer was implemented to prioritize critical situations before model generation.
 
-Selma — AI Engineer
-Project: Medical Triage AI
+Critical symptoms detected:
+- chest pain,
+- breathing difficulty,
+- stroke symptoms,
+- heavy bleeding,
+- loss of consciousness,
+- overdose.
 
+This prevents unsafe responses in emergency situations.
 
+---
+
+## Latency and Performance
+
+Measured latency:
+
+| Scenario | Average Response Time |
+|---|---|
+| Simple request | ~100 ms |
+| Emergency case | ~120 ms |
+| Text generation | ~150–300 ms |
+
+The API remains responsive for real-time demonstration purposes.
+
+---
+
+## Robustness Testing
+
+The system was tested on:
+- urgent symptoms,
+- non-urgent symptoms,
+- malformed prompts,
+- incomplete inputs,
+- unsafe generations.
+
+Fallback mechanisms were implemented to ensure stable behavior even when the model output is invalid.
+
+---
+
+## Traceability
+
+Interaction logs were added for debugging and auditability.
+
+Example:
+
+```text
+[LOG] Symptom: chest pain
+[LOG] Triage: URGENCE
+[LOG] Latency: 0.142s
+```
+
+Logged information:
+- input symptoms,
+- predicted triage,
+- generated response,
+- response latency.
+
+---
+
+## Security Considerations
+
+The following precautions were implemented:
+- rule-based emergency prioritization,
+- fallback responses,
+- container isolation,
+- cloud deployment isolation.
+
+Current limitations:
+- no authentication layer,
+- no database persistence,
+- no clinical certification.
+
+This project remains a Proof of Concept and must not be used for real medical decision-making.
+
+---
+
+## Roadmap
+
+Short-term:
+- API authentication,
+- monitoring dashboards,
+- persistent logging,
+- better error handling.
+
+Mid-term:
+- full vLLM integration,
+- GPU optimization,
+- scalable deployment architecture.
+
+Long-term:
+- clinical validation,
+- GDPR compliance,
+- hospital integration,
+- certified medical deployment.
+
+---
+
+## Go / No-Go
+
+### Go if:
+- API remains stable,
+- latency stays below 1 second,
+- emergency rules are reliable,
+- endpoint is accessible.
+
+### No-Go if:
+- critical errors appear,
+- unsafe responses are generated,
+- deployment becomes unstable,
+- endpoint becomes unavailable.
+
+---
+
+## Conclusion
+
+This project demonstrates the development of a complete AI-powered medical triage prototype combining:
+- language model fine-tuning,
+- LoRA and DPO alignment,
+- FastAPI deployment,
+- Docker containerization,
+- CI/CD automation,
+- cloud deployment,
+- safety mechanisms,
+- traceability and evaluation.
+
+The resulting architecture provides a strong foundation for future industrialization and medical AI experimentation.
