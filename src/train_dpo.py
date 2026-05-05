@@ -28,7 +28,7 @@ training_args = DPOConfig(
     fp16=False
 )
 
-# ⚠️ PAS de tokenizer ici
+
 trainer = DPOTrainer(
     model=model,
     args=training_args,
