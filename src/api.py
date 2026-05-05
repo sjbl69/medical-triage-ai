@@ -22,17 +22,25 @@ app = FastAPI(
 device = 0 if torch.cuda.is_available() else -1
 
 # =========================
-# 🔍 DEBUG MODEL FILES (désactivé en CI)
+# CI MODE
 # =========================
-if os.getenv("CI") != "true":
-    print("FILES IN MODEL:", os.listdir("/app/models/final_model"))
-    with open("/app/models/final_model/config.json") as f:
-        print("CONFIG LOADED:", json.load(f))
+CI_MODE = os.getenv("CI") == "true"
 
 # =========================
-# LOAD MODEL (désactivé en CI)
+# DEBUG MODEL FILES
 # =========================
-if os.getenv("CI") == "true":
+if not CI_MODE:
+    print("FILES IN MODEL:", os.listdir("/app/models/final_model"))
+
+    with open("/app/models/final_model/config.json") as f:
+        print("CONFIG LOADED:", json.load(f))
+else:
+    print("CI MODE ENABLED - MODEL DISABLED")
+
+# =========================
+# LOAD MODEL
+# =========================
+if CI_MODE:
     pipe = None
 else:
     pipe = pipeline(
@@ -60,11 +68,12 @@ def clean_response(text: str) -> str:
     return text.strip()
 
 # =========================
-# RULE-BASED SAFETY (AMÉLIORÉ)
+# RULE-BASED SAFETY
 # =========================
 def rule_based_triage(symptom: str):
     s = symptom.lower()
 
+    # 🚨 URGENCES VITALES
     if any(x in s for x in [
         "douleur thoracique",
         "poitrine",
@@ -81,6 +90,7 @@ def rule_based_triage(symptom: str):
     ]):
         return "URGENCE", "⚠️ Appelez immédiatement les secours."
 
+    # ⚠️ CAS SENSIBLES
     if any(x in s for x in [
         "fièvre élevée",
         "forte fièvre",
@@ -92,6 +102,7 @@ def rule_based_triage(symptom: str):
     ]):
         return "ATTENTION", "⚠️ Consultez un professionnel de santé rapidement."
 
+    # ✅ CAS LÉGERS
     if any(x in s for x in [
         "rhume",
         "toux légère",
@@ -101,6 +112,7 @@ def rule_based_triage(symptom: str):
     ]):
         return "NON_URGENCE", "Reposez-vous et surveillez les symptômes."
 
+    # défaut
     return "CONSULTATION", "Consultez un professionnel de santé."
 
 # =========================
@@ -114,9 +126,11 @@ def generate(req: Request):
 
     prompt = f"Patient: J'ai {req.symptom}\nDoctor:"
 
-    # 👉 gestion CI (sans modèle)
+    # =========================
+    # SAFE CI / RAILWAY MODE
+    # =========================
     if pipe is None:
-        model_response = "Service indisponible en CI"
+        model_response = ""
     else:
         result = pipe(
             prompt,
@@ -140,6 +154,14 @@ def generate(req: Request):
             final_message = model_response
 
     latency = time.time() - start
+
+    # =========================
+    # LOGS / TRACEABILITY
+    # =========================
+    print(f"[LOG] Symptom: {req.symptom}")
+    print(f"[LOG] Triage: {triage_rule}")
+    print(f"[LOG] Response: {final_message}")
+    print(f"[LOG] Latency: {round(latency, 3)}s")
 
     return {
         "triage": triage_rule,
