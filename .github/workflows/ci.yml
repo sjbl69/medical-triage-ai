@@ -1,0 +1,28 @@
+name: CI - Medical Triage API
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Build Docker image
+      run: docker build -t medical-triage-ai .
+
+    - name: Run container
+      run: docker run -d -p 8000:8000 medical-triage-ai
+
+    - name: Wait for API
+      run: sleep 10
+
+    - name: Test endpoint
+      run: |
+        curl -X POST http://localhost:8000/generate \
+        -H "Content-Type: application/json" \
+        -d '{"symptom":"douleur thoracique"}'
