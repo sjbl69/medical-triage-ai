@@ -1,0 +1,18 @@
+{
+  "sft_dataset": {
+    "format": "text",
+    "example": "Patient: J'ai une douleur à la poitrine\nDoctor: ⚠️ URGENCE. Appelez immédiatement les secours."
+  },
+  "dpo_dataset": {
+    "format": {
+      "prompt": "string",
+      "chosen": "string",
+      "rejected": "string"
+    },
+    "example": {
+      "prompt": "Patient: J'ai mal à la poitrine\nDoctor:",
+      "chosen": "⚠️ URGENCE. Appelez immédiatement les secours.",
+      "rejected": "Reposez-vous, ce n'est rien."
+    }
+  }
+}
