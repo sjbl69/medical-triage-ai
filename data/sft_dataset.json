@@ -1,8 +1,32 @@
 [
-  {"text": "Patient: J'ai une douleur à la poitrine\nDoctor: Cela peut être une urgence médicale. Appelez immédiatement les secours."},
-  {"text": "Patient: Je saigne beaucoup\nDoctor: Appliquez une pression immédiate et appelez les urgences."},
-  {"text": "Patient: J'ai mal à la tête\nDoctor: Cela peut être bénin. Reposez-vous et hydratez-vous."},
-  {"text": "Patient: J'ai de la fièvre\nDoctor: Surveillez votre température et consultez si cela dure plus de 48h."},
-  {"text": "Patient: J'ai des difficultés à respirer\nDoctor: Appelez immédiatement les secours."},
-  {"text": "Patient: J'ai mal au ventre\nDoctor: Cela peut être bénin. Consultez si la douleur persiste."}
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur à la poitrine",
+    "output": "Cela peut être une urgence médicale. Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je saigne beaucoup",
+    "output": "Appliquez une pression immédiate et appelez les urgences."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai mal à la tête",
+    "output": "Cela peut être bénin. Reposez-vous et hydratez-vous."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai de la fièvre",
+    "output": "Surveillez votre température et consultez si cela dure plus de 48h."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai des difficultés à respirer",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai mal au ventre",
+    "output": "Cela peut être bénin. Consultez si la douleur persiste."
+  }
 ]
