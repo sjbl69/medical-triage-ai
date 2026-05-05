@@ -9,32 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      #  Clone le repo
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      #  Build Docker
       - name: Build Docker image
         run: docker build -t medical-triage-ai .
 
-      # Lancer le container
-      - name: Run container
-        run: docker run -d -p 8000:8000 medical-triage-ai
+      - name: Run container (mode CI)
+        run: docker run -d -p 8000:8000 -e CI=true medical-triage-ai
 
-      
       - name: Wait for API
         run: |
-          echo "Waiting for API to start..."
+          echo "Waiting for API..."
           for i in {1..20}; do
             if curl -s http://localhost:8000/; then
               echo "API is up!"
               break
             fi
-            echo "Retrying..."
             sleep 5
           done
 
-      #  Test endpoint
       - name: Test endpoint
         run: |
           curl -X POST http://localhost:8000/generate \

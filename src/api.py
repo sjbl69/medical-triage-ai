@@ -22,22 +22,25 @@ app = FastAPI(
 device = 0 if torch.cuda.is_available() else -1
 
 # =========================
-# 🔍 DEBUG MODEL FILES
+# 🔍 DEBUG MODEL FILES (désactivé en CI)
 # =========================
-print("FILES IN MODEL:", os.listdir("/app/models/final_model"))
+if os.getenv("CI") != "true":
+    print("FILES IN MODEL:", os.listdir("/app/models/final_model"))
+    with open("/app/models/final_model/config.json") as f:
+        print("CONFIG LOADED:", json.load(f))
 
-with open("/app/models/final_model/config.json") as f:
-    print("CONFIG LOADED:", json.load(f))
-
 # =========================
-# LOAD MODEL
+# LOAD MODEL (désactivé en CI)
 # =========================
-pipe = pipeline(
-    "text-generation",
-    model="/app/models/final_model",
-    tokenizer="/app/models/final_model",
-    device=device
-)
+if os.getenv("CI") == "true":
+    pipe = None
+else:
+    pipe = pipeline(
+        "text-generation",
+        model="/app/models/final_model",
+        tokenizer="/app/models/final_model",
+        device=device
+    )
 
 # =========================
 # REQUEST SCHEMA
@@ -62,7 +65,6 @@ def clean_response(text: str) -> str:
 def rule_based_triage(symptom: str):
     s = symptom.lower()
 
-    # 🚨 URGENCES VITALES
     if any(x in s for x in [
         "douleur thoracique",
         "poitrine",
@@ -79,7 +81,6 @@ def rule_based_triage(symptom: str):
     ]):
         return "URGENCE", "⚠️ Appelez immédiatement les secours."
 
-    # ⚠️ CAS SENSIBLES
     if any(x in s for x in [
         "fièvre élevée",
         "forte fièvre",
@@ -91,7 +92,6 @@ def rule_based_triage(symptom: str):
     ]):
         return "ATTENTION", "⚠️ Consultez un professionnel de santé rapidement."
 
-    # ✅ CAS LÉGERS
     if any(x in s for x in [
         "rhume",
         "toux légère",
@@ -101,7 +101,6 @@ def rule_based_triage(symptom: str):
     ]):
         return "NON_URGENCE", "Reposez-vous et surveillez les symptômes."
 
-    # défaut
     return "CONSULTATION", "Consultez un professionnel de santé."
 
 # =========================
@@ -115,13 +114,17 @@ def generate(req: Request):
 
     prompt = f"Patient: J'ai {req.symptom}\nDoctor:"
 
-    result = pipe(
-        prompt,
-        max_new_tokens=40,
-        do_sample=False
-    )[0]["generated_text"]
+    # 👉 gestion CI (sans modèle)
+    if pipe is None:
+        model_response = "Service indisponible en CI"
+    else:
+        result = pipe(
+            prompt,
+            max_new_tokens=40,
+            do_sample=False
+        )[0]["generated_text"]
 
-    model_response = clean_response(result)
+        model_response = clean_response(result)
 
     # priorité sécurité
     if triage_rule in ["URGENCE", "ATTENTION"]:
