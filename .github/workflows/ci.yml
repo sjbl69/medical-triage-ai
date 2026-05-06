@@ -16,13 +16,13 @@ jobs:
         run: docker build -t medical-triage-ai .
 
       - name: Run container (mode CI)
-        run: docker run -d -p 8000:8000 -e CI=true medical-triage-ai
+        run: docker run -d -p 8080:8080 -e CI=true medical-triage-ai
 
       - name: Wait for API
         run: |
           echo "Waiting for API..."
           for i in {1..20}; do
-            if curl -s http://localhost:8000/; then
+            if curl -s http://localhost:8080/; then
               echo "API is up!"
               break
             fi
@@ -31,6 +31,6 @@ jobs:
 
       - name: Test endpoint
         run: |
-          curl -X POST http://localhost:8000/generate \
+          curl -X POST http://localhost:8080/generate \
           -H "Content-Type: application/json" \
           -d '{"symptom":"douleur thoracique"}'
