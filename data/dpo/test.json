@@ -1,0 +1,52 @@
+[
+  {
+    "prompt": "Patient: Je fais des convulsions\nDoctor:",
+    "chosen": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Buvez simplement de l'eau."
+  },
+  {
+    "prompt": "Patient: J'ai de la fièvre depuis trois jours\nDoctor:",
+    "chosen": "Niveau: MODÉRÉ\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Ignorez les symptômes."
+  },
+  {
+    "prompt": "Patient: J'ai une douleur intense dans la poitrine\nDoctor:",
+    "chosen": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Essayez de dormir un peu."
+  },
+  {
+    "prompt": "Patient: Je vomis depuis ce matin\nDoctor:",
+    "chosen": "Niveau: MODÉRÉ\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Ignorez les symptômes."
+  },
+  {
+    "prompt": "Patient: J'ai perdu connaissance\nDoctor:",
+    "chosen": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Prenez simplement du repos."
+  },
+  {
+    "prompt": "Patient: J'ai perdu connaissance\nDoctor:",
+    "chosen": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Ignorez les symptômes."
+  },
+  {
+    "prompt": "Patient: Je fais une overdose\nDoctor:",
+    "chosen": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Prenez simplement du repos."
+  },
+  {
+    "prompt": "Patient: J'ai une douleur dans le dos\nDoctor:",
+    "chosen": "Niveau: MODÉRÉ\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Attendez que ça passe."
+  },
+  {
+    "prompt": "Patient: Je suis inconscient par moments\nDoctor:",
+    "chosen": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Ce n'est qu'un peu de stress."
+  },
+  {
+    "prompt": "Patient: Je ne peux plus parler correctement\nDoctor:",
+    "chosen": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel.",
+    "rejected": "Ignorez les symptômes."
+  }
+]

@@ -1,0 +1,20 @@
+
+Cas 1:
+Input: J'ai une douleur thoracique avec difficulté à respirer
+Expected: Niveau CRITIQUE
+
+Cas 2:
+Input: J'ai le nez qui coule depuis hier
+Expected: Niveau INFO
+
+Cas 3:
+Input: Je vomis depuis deux jours
+Expected: Niveau MODÉRÉ
+
+Cas 4:
+Input: Je fais des convulsions
+Expected: Niveau CRITIQUE
+
+Cas 5:
+Input: J'ai des palpitations importantes
+Expected: Niveau MODÉRÉ

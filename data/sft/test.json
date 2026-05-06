@@ -1,0 +1,242 @@
+[
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "neurologique",
+    "input": "J'ai une migraine légère avec de la fatigue",
+    "output": "Niveau: INFO\nConseil: Reposez-vous dans un endroit calme et hydratez-vous.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "allergique",
+    "input": "J'ai des plaques rouges sur la peau pendant la nuit",
+    "output": "Niveau: INFO\nConseil: Surveillez les symptômes et hydratez votre peau.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "traumatique",
+    "input": "J'ai une douleur dans le dos après avoir mangé",
+    "output": "Niveau: MODÉRÉ\nConseil: Reposez-vous et consultez si la douleur persiste.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "respiratoire",
+    "input": "Je suis très essoufflé après avoir mangé",
+    "output": "Niveau: URGENCE\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "J'ai une douleur intense dans la poitrine depuis trois jours",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "neurologique",
+    "input": "Je fais des convulsions avec des nausées",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "traumatique",
+    "input": "Je me suis brûlé gravement depuis ce matin",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours et refroidissez la zone brûlée.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "digestif",
+    "input": "J'ai une douleur abdominale intense depuis ce matin",
+    "output": "Niveau: URGENCE\nConseil: Consultez rapidement les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "respiratoire",
+    "input": "J'ai une forte toux avec des sueurs",
+    "output": "Niveau: MODÉRÉ\nConseil: Consultez un médecin si la toux persiste.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "digestif",
+    "input": "J'ai une diarrhée légère avec des nausées",
+    "output": "Niveau: INFO\nConseil: Hydratez-vous correctement et surveillez les symptômes.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "allergique",
+    "input": "J'ai des plaques rouges sur la peau depuis une semaine",
+    "output": "Niveau: INFO\nConseil: Surveillez les symptômes et hydratez votre peau.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "traumatique",
+    "input": "J'ai une douleur dans le dos depuis une semaine",
+    "output": "Niveau: MODÉRÉ\nConseil: Reposez-vous et consultez si la douleur persiste.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "traumatique",
+    "input": "Je saigne beaucoup pendant la nuit",
+    "output": "Niveau: CRITIQUE\nConseil: Appliquez une pression immédiate et appelez les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "allergique",
+    "input": "Je fais une réaction allergique avec de la fatigue",
+    "output": "Niveau: URGENCE\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "respiratoire",
+    "input": "Je respire difficilement avec des vertiges",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "infectieux",
+    "input": "J'ai une infection depuis une semaine",
+    "output": "Niveau: MODÉRÉ\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "Je ressens une oppression thoracique depuis ce matin",
+    "output": "Niveau: URGENCE\nConseil: Consultez immédiatement les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "traumatique",
+    "input": "Je me suis brûlé gravement pendant la nuit",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours et refroidissez la zone brûlée.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "infectieux",
+    "input": "J'ai une forte fièvre depuis trois jours avec de la fatigue",
+    "output": "Niveau: MODÉRÉ\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "respiratoire",
+    "input": "J'ai une forte toux depuis une semaine",
+    "output": "Niveau: MODÉRÉ\nConseil: Consultez un médecin si la toux persiste.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "respiratoire",
+    "input": "J'ai une forte toux depuis trois jours",
+    "output": "Niveau: MODÉRÉ\nConseil: Consultez un médecin si la toux persiste.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "J'ai une douleur au bras gauche depuis une semaine",
+    "output": "Niveau: URGENCE\nConseil: Consultez rapidement les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "Je ressens une oppression thoracique depuis trois jours",
+    "output": "Niveau: URGENCE\nConseil: Consultez immédiatement les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "Je ressens une oppression thoracique avec des sueurs",
+    "output": "Niveau: URGENCE\nConseil: Consultez immédiatement les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "digestif",
+    "input": "J'ai du sang dans les selles",
+    "output": "Niveau: URGENCE\nConseil: Consultez immédiatement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "traumatique",
+    "input": "Je me suis brûlé gravement depuis deux heures",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours et refroidissez la zone brûlée.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "J'ai une douleur au bras gauche pendant la nuit",
+    "output": "Niveau: URGENCE\nConseil: Consultez rapidement les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "infectieux",
+    "input": "J'ai une infection depuis trois jours",
+    "output": "Niveau: MODÉRÉ\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "allergique",
+    "input": "J'ai une allergie alimentaire pendant la nuit",
+    "output": "Niveau: URGENCE\nConseil: Consultez rapidement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "traumatique",
+    "input": "J'ai une douleur au genou après un choc avec des nausées",
+    "output": "Niveau: MODÉRÉ\nConseil: Reposez-vous et consultez si la douleur persiste.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "J'ai une douleur thoracique avec sueurs avec des sueurs",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "allergique",
+    "input": "Je fais une réaction sévère après un médicament avec des vertiges",
+    "output": "Niveau: CRITIQUE\nConseil: Consultez immédiatement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "respiratoire",
+    "input": "J'ai du mal à respirer depuis une semaine",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "respiratoire",
+    "input": "J'ai une forte toux avec de la fatigue",
+    "output": "Niveau: MODÉRÉ\nConseil: Consultez un médecin si la toux persiste.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "neurologique",
+    "input": "J'ai perdu connaissance avec des vertiges",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "neurologique",
+    "input": "Je fais des convulsions pendant la nuit",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "allergique",
+    "input": "Je fais une réaction sévère après un médicament après un effort",
+    "output": "Niveau: CRITIQUE\nConseil: Consultez immédiatement un professionnel de santé.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "Je ressens une oppression thoracique",
+    "output": "Niveau: URGENCE\nConseil: Consultez immédiatement les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "cardiaque",
+    "input": "J'ai une douleur thoracique avec sueurs après avoir mangé",
+    "output": "Niveau: CRITIQUE\nConseil: Appelez immédiatement les secours.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  },
+  {
+    "instruction": "Trier une situation médicale",
+    "category": "traumatique",
+    "input": "Je saigne beaucoup depuis trois jours",
+    "output": "Niveau: CRITIQUE\nConseil: Appliquez une pression immédiate et appelez les urgences.\nAvertissement: Cette réponse ne remplace pas un avis médical professionnel."
+  }
+]
