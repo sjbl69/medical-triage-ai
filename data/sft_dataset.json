@@ -28,5 +28,230 @@
     "instruction": "Donner un conseil médical",
     "input": "J'ai mal au ventre",
     "output": "Cela peut être bénin. Consultez si la douleur persiste."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je tousse depuis plusieurs jours",
+    "output": "Hydratez-vous et consultez un médecin si les symptômes persistent."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une forte douleur au bras gauche",
+    "output": "Cela peut être un signe d'urgence médicale. Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je me sens très fatigué",
+    "output": "Reposez-vous et surveillez l'évolution de votre état."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai perdu connaissance",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une forte fièvre depuis trois jours",
+    "output": "Consultez rapidement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai des vertiges",
+    "output": "Reposez-vous et consultez si les vertiges persistent."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je vomis depuis ce matin",
+    "output": "Hydratez-vous et consultez un médecin si les vomissements persistent."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur intense dans la poitrine",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai le nez qui coule",
+    "output": "Cela ressemble à un rhume léger. Reposez-vous et hydratez-vous."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai des convulsions",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une réaction allergique",
+    "output": "Consultez rapidement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je me suis brûlé gravement",
+    "output": "Appelez immédiatement les secours et refroidissez la zone brûlée."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une diarrhée légère",
+    "output": "Hydratez-vous correctement et surveillez les symptômes."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai du mal à respirer",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai mal à la gorge",
+    "output": "Reposez-vous et hydratez-vous."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur abdominale intense",
+    "output": "Consultez rapidement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je suis inconscient par moments",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une migraine légère",
+    "output": "Reposez-vous dans un endroit calme et hydratez-vous."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je fais une overdose",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur dans le dos",
+    "output": "Reposez-vous et consultez si la douleur persiste."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une forte toux",
+    "output": "Consultez un professionnel de santé si la toux persiste."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je me sens faible et j'ai des palpitations",
+    "output": "Consultez rapidement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur à la jambe",
+    "output": "Reposez-vous et consultez si la douleur augmente."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai un saignement abondant",
+    "output": "Appliquez une pression immédiate et appelez les urgences."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai des nausées",
+    "output": "Hydratez-vous et surveillez les symptômes."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur au cou",
+    "output": "Reposez-vous et consultez si la douleur persiste."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai des frissons",
+    "output": "Surveillez votre température et reposez-vous."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une infection",
+    "output": "Consultez rapidement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai du sang dans les selles",
+    "output": "Consultez immédiatement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je suis très essoufflé",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai mal aux oreilles",
+    "output": "Consultez un médecin si la douleur persiste."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur articulaire",
+    "output": "Reposez-vous et surveillez les symptômes."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai des douleurs musculaires",
+    "output": "Hydratez-vous et reposez-vous."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur violente à la tête",
+    "output": "Consultez immédiatement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je ne peux plus parler correctement",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une forte douleur abdominale",
+    "output": "Consultez rapidement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je fais une réaction sévère après un médicament",
+    "output": "Consultez immédiatement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une toux légère",
+    "output": "Hydratez-vous et reposez-vous."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai des douleurs au genou",
+    "output": "Reposez-vous et consultez si les douleurs persistent."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai mal après une chute",
+    "output": "Consultez un médecin si la douleur est importante."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je tremble beaucoup",
+    "output": "Consultez rapidement un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je suis très déshydraté",
+    "output": "Hydratez-vous rapidement et consultez si nécessaire."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je ressens une oppression thoracique",
+    "output": "Appelez immédiatement les secours."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "J'ai une douleur aux yeux",
+    "output": "Consultez un professionnel de santé."
+  },
+  {
+    "instruction": "Donner un conseil médical",
+    "input": "Je respire difficilement depuis une heure",
+    "output": "Appelez immédiatement les secours."
   }
 ]
