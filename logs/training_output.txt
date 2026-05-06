@@ -1,0 +1,8 @@
+SFT training started...
+Epoch 1/1
+loss=1.82
+training completed
+
+DPO training started...
+loss=0.64
+training completed
