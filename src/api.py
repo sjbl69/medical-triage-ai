@@ -3,7 +3,8 @@ from pydantic import BaseModel
 from typing import Optional
 
 app = FastAPI(
-    title="Medical Triage AI",
+    title="Medical Triage API",
+    description="API de triage médical (POC IA + règles de sécurité)",
     version="1.0"
 )
 
@@ -13,7 +14,13 @@ class PromptRequest(BaseModel):
 @app.get("/")
 def root():
     return {
-        "message": "Medical Triage AI API running"
+        "status": "API running"
+    }
+
+@app.get("/test")
+def test():
+    return {
+        "message": "test ok"
     }
 
 @app.post("/generate")
