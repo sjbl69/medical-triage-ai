@@ -1,4 +1,9 @@
 fastapi
 uvicorn
+pydantic
 transformers
 torch
+datasets
+peft
+trl
+accelerate
