@@ -2,9 +2,12 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-COPY . .
+COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# port dynamique
-CMD ["sh", "-c", "uvicorn src.api:app --host 0.0.0.0 --port ${PORT:-8000}"]
+COPY . .
+
+EXPOSE 8080
+
+CMD ["uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8080"]
