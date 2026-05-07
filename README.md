@@ -87,13 +87,14 @@ Uvicorn running on http://0.0.0.0:8080
 Public endpoint:
 
 ```text
-https://medical-triage-ai-production.up.railway.app
+
+https://medical-triage-ai-production-a675.up.railway.app/
 ```
 
 Swagger documentation:
 
 ```text
-https://medical-triage-ai-production.up.railway.app/docs
+https://medical-triage-ai-production-a675.up.railway.app/docs
 ```
 
 ---
