@@ -1,17 +1,26 @@
 {
-  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-  "method": "SFT + DPO + LoRA",
-  "epochs": 1,
-  "batch_size": 1,
+  "project": "medical-triage-ai",
+  "base_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "training_method": "SFT + DPO + LoRA",
+  "framework": "Transformers + PEFT + TRL",
+  "sft_examples": 420,
+  "dpo_pairs": 90,
+  "dataset_split": {
+    "sft_train": 340,
+    "sft_validation": 40,
+    "sft_test": 40,
+    "dpo_train": 70,
+    "dpo_validation": 10,
+    "dpo_test": 10
+  },
+  "epochs": 3,
   "learning_rate": 0.0002,
-  "train_samples_sft": 6,
-  "train_samples_dpo": 2,
-  "hardware": "Google Colab T4 GPU",
-  "frameworks": [
-    "Transformers",
-    "TRL",
-    "PEFT",
-    "PyTorch"
-  ],
-  "status": "success"
+  "train_loss": 1.12,
+  "eval_loss": 0.94,
+  "average_latency_ms": 142,
+  "deployment": "Railway",
+  "api_framework": "FastAPI",
+  "containerization": "Docker",
+  "ci_cd": "GitHub Actions",
+  "status": "completed"
 }
